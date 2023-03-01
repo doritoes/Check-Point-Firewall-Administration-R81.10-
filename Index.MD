@@ -1,0 +1,41 @@
+# Gotchas
+Surprise! (p. 316 for example)
+
+# NAT
+Up to two NAT rules can be applied, pp. 397-424
+
+Source port pools and GNAT, p. 406
+
+NAT pool and exhaustion, pp. 406-408
+
+NAT pools when you don't want to create a network object; see gateway Web GUI, p.421
+
+cpview and NAT pool utility, p. 407
+# Domain Objects
+Correct way, pp. 387-389
+    - tool on gateway
+    - No wildcard
+    - without FQDN checked it will rely on reverse DNS lookups
+# Proxy ARP
+`fw ctl arp -n` on the gateway, p. 416
+
+when not required, p. 419
+# DHCP Relay
+Gaia configuration and example rules, pp. 430-431
+# Identify Awareness
+AD Query for Identity Awareness is deprecated due to security issue CVE-2021-26414; use Identity collector instead, p. 453
+# VPN
+Excluding satellite's gateway from the VPN, pp. 481-483
+
+Tunnel status: Logs & Monitor, then click Tunnel and User monitoring. p. 286
+# Performance
+## Drop Templates
+Drop templates - "don't use them" - p. 319
+# Backups
+Properly restoring from a saved Gaia configuration file, p. 227
+A cheeky way to download a gateway backup configuration from the Web GUI without using SCP, pp. 225-226
+# Management Server
+How to tell if the managment server is back up after a reboot, p. 235
+`$MDS_FWDIR/scripts/check_cpm_status.sh` works in both MDS/MDSM and SMS
+# CPUSE
+Offline CPUSE, pp. 236-238
