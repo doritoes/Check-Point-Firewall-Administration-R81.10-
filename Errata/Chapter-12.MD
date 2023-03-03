@@ -74,3 +74,15 @@ set expert-password
 1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites. This will not work because the site-to-site (S2S) VPN tunnel is still active and the traffic is being backhauled and the CPCXL policy is being applied.
     - Modify the "Branchees" community, VPN Routing, set to "To center only"
     - Publish changes, and push both policies (LeftSide_RA and RightSide)
+
+2. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
+    - re-installing the CPCXL VPN Certificate then un-installing/re-installing the endpoint did not clear the warning
+    - after viewing the details, select Trust and continue
+3. On page 502 step 10 instructs choosing the login option Standard (Default), but this option does not appear. Figure 12.37 shows "Standard (Default)", which did appear.
+    - The only option available is vpn (Default); step 11 shows a display name of Standard, but the default is still vpn
+    - Click Next
+4. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
+    - User name is `Ra_user1`
+5. If you have having problems with Page 506 step 1
+    - If Internet traffic is going out via CPGW, go back and check page 495 step3, #2 (route all traffic through gateway)
+    - If you are getting Connection Failed, You cannot receive and Office Mode IP address at this time, troublehoot DHCP
