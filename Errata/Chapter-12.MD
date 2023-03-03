@@ -84,6 +84,9 @@ set expert-password
 4. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
     - User name is `Ra_user1`
 5. If you have having problems with Page 506 step 1
+    - Try installing both the access policy and Threat Prevention policy
     - If Internet traffic is going out via CPGW, go back and check page 495 step3, #2 (route all traffic through gateway)
     - If you are getting Connection Failed, You cannot receive and Office Mode IP address at this time, troublehoot DHCP and make sure ADDCDNS is up and running
-    - If you can't reach any Internet sites, check for message "Connection terminated before the Security Gateway was able to make a decision: Insufficient data passed. To learn more see sk113479."
+    - If you can't reach any Internet sites, check for message "Connection terminated before the Security Gateway was able to make a decision: Insufficient data passed. To learn more see sk113479." This parent rule is still problematic after we added 192.169.24.0/24 to the source column.
+
+BLOCKED at page 506 step 1. DNS works, but traffic dropped at "APCL_URLF_Parent Rule" rule, "Connection terminated before the Security Gateway was able to make a decision: Insufficient data passed. To learn more see sk113479."
