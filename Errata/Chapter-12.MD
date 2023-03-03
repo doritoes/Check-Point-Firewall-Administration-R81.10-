@@ -85,4 +85,5 @@ set expert-password
     - User name is `Ra_user1`
 5. If you have having problems with Page 506 step 1
     - If Internet traffic is going out via CPGW, go back and check page 495 step3, #2 (route all traffic through gateway)
-    - If you are getting Connection Failed, You cannot receive and Office Mode IP address at this time, troublehoot DHCP
+    - If you are getting Connection Failed, You cannot receive and Office Mode IP address at this time, troublehoot DHCP and make sure ADDCDNS is up and running
+    - If you not getting blocked pages, something is missing.
