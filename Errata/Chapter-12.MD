@@ -71,7 +71,10 @@ set expert-password
     - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
     - click Install
 ## Preparing remote client pp. 500-506
-1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites. This will not work because the site-to-site (S2S) VPN tunnel is still active and the traffic is being backhauled and the CPCXL policy is being applied.
+1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites.
+    - If you have trouble with Internet connectivity
+        - Be sure you followed instructions on page 487 under "Configuring a remote access IPSec VPN", where you remove both gatewas from the "Branches" community.  Both policies need to beinstalled.
+        - On the active CPCXL membere CPCM1 run `vpn tu` to see if the old site to site (S2S) tunnel are still up, and clear them if they are
     - Modify the "Branches" community, VPN Routing, set to "To center only"
     - Publish changes, and push both policies (LeftSide_RA and RightSide)
 
