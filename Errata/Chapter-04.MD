@@ -125,6 +125,7 @@ Run the following powershell command on each server (addcdns commmands already i
 ```
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 10.20.20.10
 ```
+2. Instead of using the book's scripts on pages 136 and 137, copy and paste the (updated) scripts from the repo
 ## Preparing Active Directory and the domain controller pp.139-143
 1. Consider increasing vPCU and RAM on the ADDCDNS VM
 2. Page 139 step 7 has code that was later added to the Github repository.
