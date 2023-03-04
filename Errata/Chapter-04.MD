@@ -127,12 +127,13 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 ```
 2. Instead of using the book's scripts on pages 136 and 137, copy and paste the (updated) scripts from the repo
 ## Preparing Active Directory and the domain controller pp.139-143
-1. Consider increasing vPCU and RAM on the ADDCDNS VM
-2. Page 139 step 7 has code that was later added to the Github repository.
+1. Page 139 step 7 has code that was later added to the Github repository. Always use the latest code from the repo!
     - The following are the two files that can be created and added to the Scripts folder
-        - `addcdns.bat`
-        - `addcdns.ps1`
-    - Don't forget to rename the system to ADDCDNS and reboot before runnning the script
+        - `addcdns_step1.bat`
+        - `addcdns_step1.ps1`
+        - `addcdns_step2.bat`
+        - `addcdns_step2.ps1`
+    - Don't forget to run step one before running step 2
 ## Preparing cloned Check Point hosts pp. 143-145
 1. The updated repo script now increases CPSMS RAM to 6GB
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
