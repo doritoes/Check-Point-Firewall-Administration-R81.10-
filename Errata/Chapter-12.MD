@@ -64,8 +64,11 @@ set expert-password
     - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
 ## Configuring acces control policy rules for remote access pp. 497-499
 1. Page 499 step 1 discusses replacing the "Int_Nets" object; this is actually the "Any" object since the parent rule already is limited to Int_Nets
-    - Cannot add "RA_Role" to the parent rule (not compatible)
-    - Add Net_192.168.254.0 to the parent rule
+    - Add new subnet object Net_192.168.254.0 to the parent rule source column
+        - 192.168.254.0/24
+        - NAT: check automatic address translation rules
+        - NAT: Hide behind the gateway
+        - NAT: Install on gateway CPGW
     - Follow the book's instructions, understanding instead of "Int_Nets" you will see "Any"
 2. Step 4 says to install the policy; it does not warn the users of the warning message that is displayed
     - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
@@ -73,7 +76,7 @@ set expert-password
 ## Preparing remote client pp. 500-506
 1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites.
     - If you have trouble with Internet connectivity
-        - Be sure you followed instructions on page 487 under "Configuring a remote access IPSec VPN", where you remove both gatewas from the "Branches" community.  Both policies need to beinstalled.
+        - Be sure you followed instructions on page 487 under "Configuring a remote access IPSec VPN", where you remove both gatewas from the "Branches" community.  Both policies need to be installed.
         - On the active CPCXL membere CPCM1 run `vpn tu` to see if the old site to site (S2S) tunnel are still up, and clear them if they are
     - Modify the "Branches" community, VPN Routing, set to "To center only"
     - Publish changes, and push both policies (LeftSide_RA and RightSide)
@@ -86,10 +89,3 @@ set expert-password
     - Click Next
 4. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
     - User name is `Ra_user1`
-5. If you have having problems with Page 506 step 1
-    - Try installing both the access policy and Threat Prevention policy
-    - If Internet traffic is going out via CPGW, go back and check page 495 step3, #2 (route all traffic through gateway)
-    - If you are getting Connection Failed, You cannot receive and Office Mode IP address at this time, troublehoot DHCP and make sure ADDCDNS is up and running
-    - If you can't reach any Internet sites, check for message "Connection terminated before the Security Gateway was able to make a decision: Insufficient data passed. To learn more see sk113479." This parent rule is still problematic after we added 192.169.24.0/24 to the source column.
-
-BLOCKED at page 506 step 1. DNS works, but traffic dropped at "APCL_URLF_Parent Rule" rule, "Connection terminated before the Security Gateway was able to make a decision: Insufficient data passed. To learn more see sk113479."
