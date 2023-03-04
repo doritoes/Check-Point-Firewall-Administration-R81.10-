@@ -119,7 +119,7 @@ Restart-Computer
 ```
 2. Missing DNS settings on these Windows hosts with static IP addresses
     - LeftHost, SmartConsole, DMZSRV do not have DNS configured
-    - The official repo has been updated to set DNS
+    - The official repo has been updated to set DNS, so copy and paste from the repo rather than following the book
     - RightHost is set with DNS server 9.9.9.9
 Run the following powershell command on each server (addcdns commmands already included this)
 ```
