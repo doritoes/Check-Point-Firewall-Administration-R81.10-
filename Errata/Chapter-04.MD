@@ -138,5 +138,10 @@ Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -Serv
 1. The updated repo script now increases CPSMS RAM to 6GB
     - sk104848 recommends at least 6GB memory for the SMS; 8GB for production
 ## Preparing SmartConsole pp. 145-146
-1. Consider adding vCPUs to SmartConsole VM
-2. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
+1. If you run into any of the following on SmartConsole or ADDCDNS, see the suggestions for each
+    - Unresponsive to mouse
+        - check the mouse capture setttings, try changing the settings back and forth
+        - pause and unpause the VM
+    - Video session crashing (black flashes) or video only repaints when you click
+        - Devices > Insert the Guest Additions CD image,re- install Guest Additions
+3. Typo in step 4; the IP address of CPCM1 should be `10.0.0.2`
