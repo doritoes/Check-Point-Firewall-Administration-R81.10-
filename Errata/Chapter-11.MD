@@ -7,7 +7,7 @@
     - close SmartConsole and re-open and the policy will display correctly
 ## Configuring DHCP on Windows Server p. 432
 1. If the "Server Manager App" does not open automatically, user may feel lost installing DHCP and configuring a DHCP scope. Search the Start menu for Add Rules and Features doesn't return anything useful.
-    - Start Server Manager
+    - Start Server Manager (it's in the Start menu)
     - Add roles or features
         - next, next, select ADDDCDNS and click Next
         - check DHCP Server and click Add Features
