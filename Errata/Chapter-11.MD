@@ -14,8 +14,13 @@
         - click Next, Next, Next
         - click Install, wait for it to complete, click Close
         - Reboot
-    - In Server Manager you will see the new DHCP line
-        - Click DHCP, then right-click ADDCDNS and click DHCP Manager
+    - Configure DHCP Server
+        - In Server Manager you will see the new DHCP item in the list
+        - Since this was just added, you will see "Configuration required for DHCP Server at ADDCDNS"
+        - Click More, then click Complete DHCP configuration
+        - Click Commit, wait for the process to complete, then click Close
+        - Reboot
+    - In Server Manager click DHCP, then right-click ADDCDNS and click DHCP Manager
     - Launch DHCP Manager
     - Expand the tree
     - Right-Click "IPv4" and select New Scope
