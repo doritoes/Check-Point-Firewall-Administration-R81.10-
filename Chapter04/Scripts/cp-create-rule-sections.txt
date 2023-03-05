@@ -1,0 +1,25 @@
+#SmartConsole CLI
+# p. 428 Chapter 11
+
+add access-section layer "Network" position top name "Gateways Access"
+add access-section layer "Network" position bottom  name "DHCP Accept, do not log."
+add access-section layer "Network" position bottom  name "Dynamic Routing. Accept, do not log."
+add access-section layer "Network" position bottom  name "Noise Suppression. Drop do not log."
+add access-section layer "Network" position bottom  name "Stealth Rule"
+add access-section layer "Network" position bottom  name "Core Services"
+add access-section layer "Network" position bottom  name "Privileged Access."
+add access-section layer "Network" position bottom  name "Rules that have corresponding entries with Empty Threat Prevention Profile"
+add access-section layer "Network" position bottom  name "General Internal Access."
+add access-section layer "Network" position bottom  name "DMZ"
+add access-section layer "Network" position bottom  name "Web Access to Updatable Object"
+add access-section layer "Network" position bottom  name "Probes"
+add access-section layer "Network" position bottom  name "Non-Optimized rules"
+add access-section layer "Network" position bottom  name "APCL & URLF, Content Awareness Inline Layer"
+add access-section layer "Network" position bottom  name "Cleanup rule"
+
+#p. 474 chapter 23
+add access-section layer "RightSide Network" position top name "Gateways Access"
+add access-section layer "RightSide Network" position bottom  name "Noise Suppression"
+add access-section layer "RightSide Network" position bottom  name "Stealth Rule"
+add access-section layer "RightSide Network" position bottom  name "Internet Access"
+add access-section layer "RightSide Network" position bottom  name "Cleanup Rule"
