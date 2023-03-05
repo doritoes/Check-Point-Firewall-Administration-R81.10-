@@ -1,6 +1,6 @@
 #SmartConsole CLI
-# p. 379 Chapter 9
 
+# p. 379 Chapter 9 - you still need to add the NAT settings yourself
 add network name Net_10.0.0.0 subnet4 10.0.0.0 mask-length4 24 comments "Mgmt Network" tags "management"
 add network name Net_10.10.10.0 subnet4 10.10.10.0 mask-length4 24 comments "Int1 Network" tags "Internal1"
 add network name Net_10.20.20.0 subnet4 10.20.20.0 mask-length4 24 comments "Int2 Network" tags "Internal2"
@@ -28,11 +28,9 @@ add host name BCast_10.20.20.255 ip-address 10.20.20.255 comments "10.20.20.255 
 add host name BCast_10.30.30.255 ip-address 10.30.30.255 comments "10.30.30.255 broadcast address for noise rule"
 add host name BCast_255.255.255.255 ip-address 255.255.255.255 comments "255.255.255.255 broadcast address for noise rule"
 
-
 # p. 434 Chapter 11
 add host name Quad9_DNS_IBM ip-address 9.9.9.9
 add dns-domain name ".time.windows.com" is-sub-domain false
-
 
 # p. 437 Chapter 11
 add dns-domain name ".www.msftncsi.com" is-sub-domain false
@@ -42,5 +40,5 @@ add dns-domain name ".www.msftconnecttest.com" is-sub-domain false
 add host name BCast_172.16.16.255 ip-address 172.16.16.255 comments "172.16.16.255 broadcast address for noise rule" 
 add host name SmartConsole_VM_NAT ip-address 200.100.0.20 comments "external NAT for SmartConsole_VM" 
 
-# p. 489 Chapter 12
+# p. 489 Chapter 12 - you still need to add the NAT settings yourself
 add network name Net_192.168.254.0 subnet4 192.168.254.0 mask-length4 24 comments "RA network"
