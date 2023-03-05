@@ -12,9 +12,11 @@ Ensure you are using the latest scripts downloaded from the official repo. These
       - increase the number of cores to for ADDCDNS later (will use in chapter 11, page 432)
 3. Figure 4.13 shows an incorrect Folder Path.
     - Folder path: C:\CPBook\LabShare
-5. Unclear what password to use Administrator p. 106
+4. Unclear what password to use Administrator p. 106
     - You can choose any password you want for the Administrator account here. You won't need it later.
     - However, to be consistent, use the standard password `CPL@b8110` which will be used later setting  up the servers
+5. Figure 4.13 shows an icorrect F: drive name
+    - It should be `LabShare`
 ## Windows Server base image scripted pp. 110-111
 1. Page 110 step 1. says to run the command "from an elevated Command Prompt." If you fail to do this, the VM will fail to boot with Windows Setup message "Windows cannot find the Microsoft License Terms. Make sure the installation source are valid and restart the installation."
     - building using the UI does not have this problem
