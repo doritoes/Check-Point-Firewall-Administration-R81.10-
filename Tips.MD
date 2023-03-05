@@ -1,5 +1,4 @@
 # Tips
-
 ## vCPU and RAM Budgeting
 The author has carefully sized the lab's virtual machines for optimal performance. Trying to tweak my setup I ran into issues:
 1. Slowness and crashes in part caused by over-allocation of CPU cores and RAM to VMs
@@ -57,9 +56,8 @@ Comparing this to my test system, HP Omen laptop:
 Leaves 4GB for the host and 4 threads short.
 
 ## Windows Sessions Manager Crashing
-1. Symptoms: screen goes black, evenually logs out
+1. Symptoms: screen goes black, eventually logs out; screen doesn't update until the mouse is clicked
     - If you scripted WINBASE, try re-installing Guest Additions using the Guest Additions CD Image; see pages 107-108
-
 ## Usability
 1. Increase the default font size in putty
     - launch putty
