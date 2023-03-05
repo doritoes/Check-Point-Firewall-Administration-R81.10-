@@ -59,16 +59,19 @@ set expert-password
 ## Changing portals' URLs and renewing a gateway cluster certificate pp.483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
     - Click Yes to continue.
+## Creating local user templates, groups, users and access roles
+1. Page 489 last paragraph instructs the user to create Net_192.168.254.0
+    - missing step to configure NAT for this object 192.168.254.0/24
+        - check automatic address translation rules
+        - Hide behind the gateway
+        - Install on gateway: CPGW
+    - missing step to add this object 192.168.254.0/24 to group IntNets
 ## Configuring a gateway or cluster for remote access pp. 489-492
 1. Page 491 step 7 provides instructions that leave the setting "MAC address for DHCP allocation" at the default; Figure 12.24 has it set to "Calculated per user name"
     - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
-## Configuring acces control policy rules for remote access pp. 497-499
+## Configuring access control policy rules for remote access pp. 497-499
 1. Page 499 step 1 discusses replacing the "Int_Nets" object; this is actually the "Any" object since the parent rule already is limited to Int_Nets
-    - Add new subnet object Net_192.168.254.0 to the parent rule source column
-        - 192.168.254.0/24
-        - NAT: check automatic address translation rules
-        - NAT: Hide behind the gateway
-        - NAT: Install on gateway CPGW
+    - See above instructions for adding Net_192.168.254.0 to IntNets in order for this to work
     - Follow the book's instructions, understanding instead of "Int_Nets" you will see "Any"
 2. Step 4 says to install the policy; it does not warn the users of the warning message that is displayed
     - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
