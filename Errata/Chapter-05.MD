@@ -22,6 +22,9 @@ Working with the author on the optimal settings. Provisioning more and more RAM 
     - Remember to be in expert mode (see step 4, enter the `expert` command)
     - You must run the command provided in the box to retrieve the correct password hash: `dbget passwd:admin:passwd`
     - When editing the file `CPCM2_FTCW`, put the hash you retrieved in single quotes after `admin_hash`. The box has a typo; there should be no space between the single quotes.
+## Network Interfaces pp. 181-185
+1. Page 183 step 5 states `Enter the subnet mask for this interface, /24 or 255.255.255.0.`, but /24 does not work
+    - Enter `255.255.255.0`; /24 is the CIDR equivalent for reference
 ## IPv4 Static Routes pp. 188-191
 1. Figure 5.35 shows the default gateway static route before it is configured. Page 167 specifically said not to configure a default gateway. After a section of steps you are NOT supposed to follow, a statement without a step number is made, confusing the user.
     - Follow the instructions "When we click Add Gateway or Edit in this section"; enter the IP address according to Figure 5.37
