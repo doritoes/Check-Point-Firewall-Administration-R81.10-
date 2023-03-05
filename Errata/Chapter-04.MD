@@ -67,10 +67,9 @@ VBoxManage startvm %VM% --type gui
     - the trailing double quote (") is REQUIRED
     - should be `powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command (F:\Scripts\sysprep_for_WINBASE.ps1)"`
     - the batch file `WINBASE_sysprep.bat` calls the powershell script correctly
-2. Step 3 provided code uses two storage driver that are not defined, "Floppy" and "SATA Controller"
+2. Step 3 was written for an earlier version of Virtual Box. If you build the Windows Base VM manually using the GUI, the script has errors. If you bulid the Windows Base VM with the script, it will work correctly
     - Initial testing had the VM mostly working when ignoring this error
-    - Created a corrected script and works well. Creates the Floppy storage and uses the correct storage name.
-3. Step also references `eject_and_snapshot_WINBASE.bat`. This script needs to be corrected as well IF you manually set up base base image using the UI. The script needs to be AS IS if you built with `create_WINBASE.bat`.
+    - Created a corrected script `eject_and_snapshot_WINBASE_GUI` for the manual build. Creates the Floppy storage and uses the correct storage name. This version is NOT compatible with the scripted WINBASE process.
 ```
 SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox
 SET VM=WINBASE
@@ -80,8 +79,6 @@ VBoxManage storageattach %VM% --storagectl "SATA" --port 1 --device 0 --medium e
 VBoxManage storageattach %VM% --storagectl "SATA" --port 2 --device 0 --medium emptydrive
 VBoxManage snapshot %VM% take "Snapshot 1" --description "Do NOT delete!!! This snapshot is used to spawn the linked clones of all Windows components in the lab."
 ```
-
-Need to double check this version works with both manual GUI and scripted builds.
 
 ## Creating a Check Point base VM pp. 113-123
 1. Inconsistent naming of the Check Point base VM causes problems
