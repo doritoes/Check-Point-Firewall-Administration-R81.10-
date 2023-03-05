@@ -1,0 +1,46 @@
+#SmartConsole CLI
+# p. 379 Chapter 9
+
+add network name Net_10.0.0.0 subnet4 10.0.0.0 mask-length4 24 comments "Mgmt Network" tags "management"
+add network name Net_10.10.10.0 subnet4 10.10.10.0 mask-length4 24 comments "Int1 Network" tags "Internal1"
+add network name Net_10.20.20.0 subnet4 10.20.20.0 mask-length4 24 comments "Int2 Network" tags "Internal2"
+add network name Net_10.30.30.0 subnet4 10.30.30.0 mask-length4 24 comments "DMZ Network" tags "dmz"
+add network name Net_200.100.0.0 subnet4 200.100.0.0 mask-length4 24 comments "Ext Left Network" tags.1 "external" tags.2 "left"
+add network name Net_200.200.0.0 subnet4 200.200.0.0 mask-length4 24 comments "Ext Right Network" tags.1 "external" tags.2 "right"
+add network name Net_172.16.16.0 subnet4 172.16.16.0 mask-length4 24 comments "Int Right Network" tags.1 "internal" tags.2 "right"
+
+# p. 383 379 Chapter 9
+add host name "SmartConsole_VM" ipv4-address 10.0.0.20 comments "SmartConsole, WebUI and SSH client" tags "management"
+add host name "LeftHost" ipv4-address 10.10.10.10 comments "Generic Windows host" tags "internal1"
+add host name "ADDCDNS" ipv4-address 10.20.20.10 comments "AD Domain Controller, DNS server" tags "internal2"
+add host name "DMZSRV" ipv4-address 10.30.30.5 comments "DMZ Web Server" tags "dmz"
+add host name "RightHost" ipv4-address 172.16.16.10 comments "Generic Windows host" tags "internal"
+add host name "RouterLeft" ipv4-address 200.100.0.254 comments "VyOS eth1" tags "external"
+add host name "RouterRight" ipv4-address 200.200.0.254 comments "VyOS eth3" tags "external"
+
+# p. 413 Chapter 10
+add group name "Int_Nets" members.1 Net_10.0.0.0 members.2 Net_10.10.10.0 members.3 Net_10.20.20.0 members.4 Net_10.30.30.0 comments "No NAT rule group"
+
+# p. 429 Chapter 11
+add host name BCast_10.0.0.255 ip-address 10.0.0.255 comments "10.0.0.255 broadcast address for noise rule"
+add host name BCast_10.10.10.255 ip-address 10.10.10.255 comments "10.10.10.255 broadcast address for noise rule"
+add host name BCast_10.20.20.255 ip-address 10.20.20.255 comments "10.20.20.255 broadcast address for noise rule"
+add host name BCast_10.30.30.255 ip-address 10.30.30.255 comments "10.30.30.255 broadcast address for noise rule"
+add host name BCast_255.255.255.255 ip-address 255.255.255.255 comments "255.255.255.255 broadcast address for noise rule"
+
+
+# p. 434 Chapter 11
+add host name Quad9_DNS_IBM ip-address 9.9.9.9
+add dns-domain name ".time.windows.com" is-sub-domain false
+
+
+# p. 437 Chapter 11
+add dns-domain name ".www.msftncsi.com" is-sub-domain false
+add dns-domain name ".www.msftconnecttest.com" is-sub-domain false
+
+# p. 472 Chapter 12
+add host name BCast_172.16.16.255 ip-address 172.16.16.255 comments "172.16.16.255 broadcast address for noise rule" 
+add host name SmartConsole_VM_NAT ip-address 200.100.0.20 comments "external NAT for SmartConsole_VM" 
+
+# p. 489 Chapter 12
+add network name Net_192.168.254.0 subnet4 192.168.254.0 mask-length4 24 comments "RA network"
