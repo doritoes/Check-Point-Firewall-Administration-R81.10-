@@ -31,7 +31,7 @@
 3. See [resources online](https://www.technig.com/install-and-configure-dhcp-using-powershell-in-windows-server-2022/) if you are interested in scripting the enabling and configuration of DHCP
 ## Configuring rules for core services pp. 433-434
 1. The NTP rule shown only allows access to the Windows time service. Back on page 193 NTP was configured for ntp.checkpoint.com on CPCM1
-    - Optionally, modify CPSMS time settings; modify the NTP rule or split into two rules, create the domain object .ntp.checkpoint.com, and permit NTP access
+    - Optionally, modify CPSMS time settings; modify the NTP rule or split into two rules, create the domain object .ntp.checkpoint.com, and add or update a rule permit NTP access
     - this is a good time to go back and configure CPCM2 time settings too
 ## Configuring rules for privileged access pp. 434-435
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
