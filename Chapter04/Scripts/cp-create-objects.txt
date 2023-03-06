@@ -36,6 +36,13 @@ add dns-domain name ".ntp2.checkpoint.com" is-sub-domain false
 add host name Quad9_DNS_IBM ip-address 9.9.9.9
 add dns-domain name ".time.windows.com" is-sub-domain false
 
+# p. 436 Chapter 11
+add dns-domain name ".updates.checkpoint.com" is-sub-domain false
+add dns-domain name ".updates.g01.checkpoint.com" is-sub-domain false
+add dns-domain name ".gwevents.checkpont.com" is-sub-domain false
+add dns-domain name ".gwevents.us.checkpont.com" is-sub-domain false
+add dns-domain name ".deploy.static.akamaitechnologies.com" is-sub-domain false
+
 # p. 437 Chapter 11
 add dns-domain name ".www.msftncsi.com" is-sub-domain false
 add dns-domain name ".www.msftconnecttest.com" is-sub-domain false
