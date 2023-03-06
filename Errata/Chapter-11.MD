@@ -43,7 +43,7 @@
 3. Figure 11.7 show an incorrect rule  name, should be something like "Block RDP non-admins Drop."
 4. Figure 11.7 has a minor typo nin the rule name of rule 12: "acccess"
 ## Configuring DMZ access rules p. 436
-1. User will need to power om DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
+1. User will need to power on DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
 2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
 ## Missing policy push and connectivity testing p.436
 1. Recommend after configuring DMZ access rules to:
