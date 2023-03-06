@@ -71,7 +71,8 @@ Leaves 4GB for the host and 4 threads short.
     - click Save
     - this does not modify previously saved sessions
 ## Tricks
-1. Check if the management server is completely up (works for SMS and MDS)
+1. Set the time zone on WINBAS before you clone it
+2. Check if the management server is completely up (works for SMS and MDS)
     - `$MDS_FWDIR/scripts/check_cpm_status.sh`
-2. You can try using `certutil` to install your custom root certificates (pp. 441-452) using the command line
+3. You can try using `certutil` to install your custom root certificates (pp. 441-452) using the command line
     - `certutil -enterprise -f -v -AddStore "Root" <Cert File path>`
