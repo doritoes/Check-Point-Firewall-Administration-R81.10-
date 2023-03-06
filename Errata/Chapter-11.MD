@@ -35,7 +35,7 @@
 3. See [resources online](https://www.technig.com/install-and-configure-dhcp-using-powershell-in-windows-server-2022/) if you are interested in scripting the enabling and configuration of DHCP
 ## Configuring rules for core services pp. 433-434
 1. The NTP rule shown only allows access to the Windows time service. Back on page 193 NTP was configured for ntp.checkpoint.com and ntp2.checkpoint.com on CPCM1
-    - Optionally, modify CPSMS time settings; modify the NTP rule or split into two rules, create the domain object .ntp.checkpoint.com, and add or update a rule permit NTP access
+    - Optionally, modify CPSMS time settings; modify the NTP rule or split into two rules, create the domain object .ntp.checkpoint.com, and add or update a rule permit NTP access (remember you need the rule for CPM1, CPM2, CPSMS)
     - this is a good time to go back and configure CPCM2 time settings too
 ## Configuring rules for privileged access pp. 434-435
 1. Figure 11.7 shows the object "Router", but the objects created are actually "RouterLeft"and "RouterRight"
@@ -52,11 +52,11 @@
         - Source: Int_Nets
         - Destination: ExternalZone
         - Services: *Any
-        - Action: Allow
+        - Action: Accept
         - Track: Log
     - push policy
     - power on LeftHost and browse to http://10.30.30.10 on DMZSRV
-        - note that the DMZSRV really strugged with one (1) vCPU; better with two
+        - note that the DMZSRV really strugged with one (1) vCPU
     - test internet access to google.com from SmartConsole and LeftHost; if these tests fail:
         - check that the router VM is healthy and can ping to the internet (has default, route, etc.); reboot as needed
         - check that ADDCDNS DNS lookups are succeeding
