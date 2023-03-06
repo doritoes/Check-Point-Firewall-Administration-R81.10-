@@ -28,6 +28,10 @@ add host name BCast_10.20.20.255 ip-address 10.20.20.255 comments "10.20.20.255 
 add host name BCast_10.30.30.255 ip-address 10.30.30.255 comments "10.30.30.255 broadcast address for noise rule"
 add host name BCast_255.255.255.255 ip-address 255.255.255.255 comments "255.255.255.255 broadcast address for noise rule"
 
+# p. 433 Chapter 11
+add dns-domain name ".ntp.checkpoint.com" is-sub-domain false
+add dns-domain name ".ntp2.checkpoint.com" is-sub-domain false
+
 # p. 434 Chapter 11
 add host name Quad9_DNS_IBM ip-address 9.9.9.9
 add dns-domain name ".time.windows.com" is-sub-domain false
