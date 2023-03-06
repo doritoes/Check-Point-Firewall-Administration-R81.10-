@@ -13,15 +13,10 @@
         - check DHCP Server and click Add Features
         - click Next, Next, Next
         - click Install, wait for it to complete, click Close
-        - Reboot
     - Configure DHCP Server
         - In Server Manager you will see the new DHCP item in the list
         - Since this was just added, you will see "Configuration required for DHCP Server at ADDCDNS"
-        - Click More, then click Complete DHCP configuration
-        - Click Commit, wait for the process to complete, then click Close
-        - Reboot
-    - In Server Manager click DHCP, then right-click ADDCDNS and click DHCP Manager
-    - Launch DHCP Manager
+        - Right-click ADDCDNS and click DHCP Manager
     - Expand the tree
     - Right-Click "IPv4" and select New Scope
         - Name: Left_Side_DHCP_Hosts
@@ -33,6 +28,10 @@
         - Yes, configure DHCP options: router 10.10.10.1, DNS 10.20.20.10, domain mycp.lab
         - No WINS servers
         - Activate the scope, Finish
+    - "Configuration required for DHCP Server at ADDCDNS", click More, click Complete DHCP configuration
+        - Click Next
+        - Click Commit
+        - When task is completed, click Close
 3. See [resources online](https://www.technig.com/install-and-configure-dhcp-using-powershell-in-windows-server-2022/) if you are interested in scripting the enabling and configuration of DHCP
 ## Configuring rules for core services pp. 433-434
 1. The NTP rule shown only allows access to the Windows time service. Back on page 193 NTP was configured for ntp.checkpoint.com on CPCM1
