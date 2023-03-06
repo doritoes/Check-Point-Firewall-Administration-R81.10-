@@ -1,0 +1,32 @@
+# set up cpcm1 similar to page 216
+# step 2
+add user secadmin uid 0 homedir /home/secadmin
+add rba user secadmin roles adminRole
+set user secadmin gid 100 shell /etc/cli.sh
+set user secadmin realname "Secadmin"
+set user secadmin password
+
+# step 3
+set interface eth0 comments "Mgmt"
+set interface eth1 comments "Internal1"
+set interface eth1 state on
+set interface eth1 ipv4-address 10.10.10.2 mask-length 24
+set interface eth2 comments "Internal2"
+set interface eth2 state on
+set interface eth2 ipv4-address 10.20.20.2 mask-length 24
+set interface eth3 comments "Sync"
+set interface eth3 state on
+set interface eth3 ipv4-address 192.168.255.1 mask-length 24
+set interface eth4 comments "External"
+set interface eth4 state on
+set interface eth4 ipv4-address 200.100.0.2 mask-length 24
+set interface eth5 comments "DMZ"
+set interface eth5 state on
+set interface eth5 ipv4-address 10.30.30.2 mask-length 24
+
+# step 3
+add host name CPCM2 ipv4-address 10.0.0.3
+add host name CPSMS ipv4-address 10.0.0.10
+
+# add the missing default route
+set static-route default nexthop gateway address 200.100.0.254 priority 1 on
