@@ -103,6 +103,6 @@
     - try closing out of SmartConsole, then try again
     - make sure ADDCDNS is up and responding
 ## Testing access role-based rules pp. 461-464
-1. If your connection from SmartConsole as user `itadmin` can access facebook initially
-    - continue testing and come back to re-test `itadmin` on SmartConsole with facebook later. It does work, if not right away
+1. If your connection from SmartConsole as user `itadmin` can access Facebook initially
+    - continue testing and come back to re-test `itadmin` on SmartConsole with Facebook later. It does work, if not right away; try Incognito mode
     - Take the time to look carefully how the logs look when Facebook is blocked for itadmin
