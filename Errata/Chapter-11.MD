@@ -92,6 +92,8 @@
 ## Distributing and installing the outbound CA and ICA certificates to the client machines pp. 445-453
 1. Minor formatting in second paragraph on page 445. The name of the VM is SmartConsole; the object name is SmartConsole_VM. See page 448 paragraph 3 for a similar error.
 2. The book instructs the user to browse to the Internet. With the notes provided, this should be working perfectly.
+3. The certificate interface in Chrome has change from what is shown on page 451
+    - an Export button has replaced "Copy to File"
 ## Enabling Identity Awareness and browser-based authentication pp. 455-459
 1. Page 459 paragraph directs the user to access to access https://200.100.0.1/connect, but there are two issues
     - this does not work correctly until the policy is pushed
