@@ -64,7 +64,7 @@
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is on page 444, without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
-    - see workaround above, "Missing policy push and connectivity testing"; in our testing it still failed
+    - see workaround above, "Missing policy push and connectivity testing"; in our testing it took some time before importing updatable objects starting working
     - See sk122636 for troubleshooting this issue
     - as a workaround, add the domains listed on page 231 for CPUSE
         - .updates.checkpoint.com
@@ -77,6 +77,7 @@
     - no firewall push (the first push is at the bottom of this page without much explanation)
     - the action will fail, so the recommendation is to disable this incomplete rule for now
     - those is no log setting in the screen shot or in the instructions, so it is up to the user to decide to enable logging on the rule
+    - see above for suggestion for a rule to make Internet work, updatable objects will work
 2. The first time pushing policy is unceremoniously introduced as "Now is a good time to publish the pending changes and install the policy befor moving on to the next section"
     - recommending pushing policy must more frequently in building a lab, so the user can detect and fix issues early on
     - from the Standard policy you have created click the Install Policy button or click the main hamburger menu and click Install Policy
