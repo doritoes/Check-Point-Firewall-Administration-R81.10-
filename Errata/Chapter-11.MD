@@ -84,7 +84,7 @@
     - install both Access Controll and Threat Prevention Policies
     - the policy installation should succed and the status icon should turn from red circle with a white X to a green circle with a white check
 ## Distributing and installing the outbound CA and ICA certificates to the client machines pp. 445-453
-1. Minor formatting in second paragraph. The name of the VM is SmartConsole; the object name is SmartConsole_VM.
+1. Minor formatting in second paragraph on page 445. The name of the VM is SmartConsole; the object name is SmartConsole_VM. See page 448 paragraph 3 for a similar error.
 2. The book instructs the user to browse to the Internet. With the notes provided, this should be working perfectly.
 ## Enabling Identity Awareness and browser-based authentication pp. 455-459
 1. Page 459 paragraph directs the user to access to access https://200.100.0.1/connect, but there are two issues
