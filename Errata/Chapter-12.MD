@@ -31,12 +31,14 @@ add allowed-client host ipv4-address 10.0.0.20
 add allowed-client host ipv4-address 200.100.0.20
 delete allowed-client host any-host
 set expert-password
+save config
 ```
 2. Page 467 step 2 is missing `save config`
-2. Page 468 step 3 has the wrong IP address for the router. Instead, the book has the user ping the firewall's own IP address
+3. Page 468 step 3 has the wrong IP address for the router. Instead, the book has the user ping the firewall's own IP address
     - `ping 200.200.0.254`
-3. Page 468 step 7 has the user to leave the Internet connection unconfigured. This is intended.
-4. Page 450 step 5 fails
+4. Page 468 step 7 has the user to leave the Internet connection unconfigured. This is intended.
+5. Page 468 step 1 might give the error "Forbidden"
+6. Page 450 step 5 fails
     - Logs show failed communications on CPCXL from CPSMS to CPGW_tmp on tcp ports 18191 and 18211
     - It's best that as part of page 468 step 1 to create a new rule 2 to allow CPSMS to CPGW_tmp for services
         - CPD (tcp/19191)
@@ -44,10 +46,10 @@ set expert-password
         - FW1 (tcp/256)
         - FW1_ica_push (tcp/18211)
     - Later on page 469 step 1, also remove the temporary rule 2 that was created
-5. Page 471 figure 12.5 is incorrect if it was cloned using clonevms.bat from the repo and the configuration fixed (see above) to work
+7. Page 471 figure 12.5 is incorrect if it was cloned using clonevms.bat from the repo and the configuration fixed (see above) to work
     - eth0 topology is Internal
     - eth1 topology is External
-6. Page 472 steps 9 and 10 likewise don't match clonevms.bat from the repo
+8. Page 472 steps 9 and 10 likewise don't match clonevms.bat from the repo
     - step 9 should be double-click eth1, modify topology, ExternalZone
     - step 10 should be double-click eth0, modify topology, override, network defined by the interface IP and Net Mask, enable Anti-Spoofing
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
@@ -57,7 +59,7 @@ set expert-password
     - Publish all changes and intall LeftSide_S2S policy
 4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
-## Changing portals' URLs and renewing a gateway cluster certificate pp.483-486
+## Changing portals' URLs and renewing a gateway cluster certificate pp. 483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
     - Click Yes to continue.
 ## Creating local user templates, groups, users and access roles
