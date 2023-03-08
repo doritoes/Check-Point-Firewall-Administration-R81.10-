@@ -22,7 +22,7 @@ VBoxManage modifyvm "CPGW" --intnet2 Net_200.200.0.0
 Corrected code for pages 467-468
 ```
 set hostname CPGW
-set interface eth0 ipv4-address 172.16.16.1 subnet-mast 255.255.255.0
+set interface eth0 ipv4-address 172.16.16.1 subnet-mask 255.255.255.0
 set interface eth0 state on
 set interface eth1 ipv4-address 200.200.0.1 subnet-mask 255.255.255.0
 set interface eth1 state on
