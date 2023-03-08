@@ -76,8 +76,7 @@
     - DNS server(s) must be configured and reachable from the Security Gateway
     - Run on your Gateway machine: `unified_dl UPDATE ONLINE_SERVICES`
 3. If you have problems accessing the Internet from SmartConsole (logs allow but no NAT happening)
-    - check the object Net_10.0.0.0 has NAT set to hide behind the gateway, install on CPCXL
-    - not sure where in the book it tells you to set this
+    - Check SmartConsole_VM NAT settings againse page 405 figure 10.9
 ## Configuring the HTTPS Inspection p. 444
 1. Importing updatable objects requires Internet access, which is not yet working
     - no firewall push (the first push is at the bottom of this page without much explanation)
