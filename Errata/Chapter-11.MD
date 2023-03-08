@@ -94,6 +94,8 @@
 2. The book instructs the user to browse to the Internet. With the notes provided, this should be working perfectly.
 3. The certificate interface in Chrome has change from what is shown on page 451
     - an Export button has replaced "Copy to File"
+## Preparing Active Directory for integration with Identity Awareness p. 454
+1. In this repo, see `ad-add-users.bat` and `ad-add-users.ps1`, which let you avoid retyping all that from the physical book
 ## Enabling Identity Awareness and browser-based authentication pp. 455-459
 1. Page 459 paragraph directs the user to access to access https://200.100.0.1/connect, but there are two issues
     - this does not work correctly until the policy is pushed
