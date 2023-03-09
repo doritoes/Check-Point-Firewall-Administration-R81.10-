@@ -57,12 +57,16 @@ save config
 ## Star community - To center only pp. 475-478
 1. Page 478 Figure 12.12 shows rule 12 with the service being the group named "dns", while the policy provided is udp/53, domain-udp
     - This is a missed opportunity to common on why the group "dns", including tcp and udp port 53, is the best choice for this rule
+2. Page 478 step 4 suggests RDP or https to DMZSRV.mycp.lab, which does not work
+    - Step 3 adding 10.20.20.10 as a secondary DNS server doesn't reliably resolve DMZSRV.mycp.lab; compare results of `nslookup dmzsrv.mycp.lab` with results of `nslookup dmzsrv.mycp.lab 10.20.20.10`; similarly examine the last sentence of step 5
+    - Enable RDP on DMZSRV; start > Remote Desktop settings > Enable Remote Desktop, confirm
+    - Username is `Administrator` and password is `CPL@b8110`
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
 1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
 2. Step 6 is mising publishing and installing the LeftSide_S2S policy
     - Publish all changes and intall LeftSide_S2S policy
-4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
+43. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
 ## Changing portals' URLs and renewing a gateway cluster certificate pp. 483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
