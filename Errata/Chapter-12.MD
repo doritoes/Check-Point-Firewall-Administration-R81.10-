@@ -54,6 +54,9 @@ save config
 9. Page 472 steps 9 and 10 likewise don't match clonevms.bat from the repo
     - step 9 should be double-click eth1, modify topology, ExternalZone
     - step 10 should be double-click eth0, modify topology, override, network defined by the interface IP and Net Mask, enable Anti-Spoofing
+## Star community - To center only pp. 475-478
+1. Page 478 Figure 12.12 shows rule 12 with the service being the group named "dns", while the policy provided is udp/53, domain-udp
+    - This is a missed opportunity to common on why the group "dns", including tcp and udp port 53, is the best choice for this rule
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
 1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
