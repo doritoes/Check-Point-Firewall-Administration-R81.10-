@@ -5,6 +5,7 @@ The author has carefully sized the lab's virtual machines for optimal performanc
 2. Type 2 hypervisors have limited support for memory sharing
     - Without memory sharing, it's possible cause paging to disk
     - VirtualBox does support memory balooning, but should not have to for this lab.
+3. If you are running short of RAM in later labs, you can shut down CPCM2 and run on a single cluster member as needed. You will need to bring it back up online in order to push policy to the cluster, however.
 
 vCPU
 |  VM                      |  vCPU  |  Count  |  Total  |
@@ -71,7 +72,7 @@ Leaves 4GB for the host and 4 threads short.
     - click Save
     - this does not modify previously saved sessions
 ## Tricks
-1. Set the time zone on WINBAS before you clone it
+1. Set the time zone on WINBASE before you clone it
 2. Check if the management server is completely up (works for SMS and MDS)
     - `$MDS_FWDIR/scripts/check_cpm_status.sh`
 3. You can try using `certutil` to install your custom root certificates (pp. 441-452) using the command line
