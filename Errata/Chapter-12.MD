@@ -94,6 +94,8 @@ save config
     - click Install
 3. If page 499 step 4 policy push fails with the message "Layer 'LeftSide_RA Network': Rule 15: Only Legacy Users Access is supported for Remote Access rules" and "Policy verification failed."
     - Go back to page 498 fiugres 12.31 and 12.32 to confirm the VPN column is set to RemoteAccess
+## Configuring a DHCP server for remote access Office Mode IP  range pp. 499-500
+1. See the files `remote-access-scope.bat` and `remote-access-scope.ps1` in this repo for electronic verions of these commands
 ## Preparing remote client pp. 500-506
 1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites.
     - If you have trouble with Internet connectivity
