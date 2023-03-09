@@ -66,7 +66,9 @@ save config
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
 2. Step 6 is mising publishing and installing the LeftSide_S2S policy
     - Publish all changes and intall LeftSide_S2S policy
-43. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
+3. Page 481 steps 7 and 8 state that sending traffic from any left side host, for example SmartConsole to any port just as port 80 on RightHost will be logged as encrypted and decrypted; this is not so
+    - Since 172.16.16.0 is not part of Int_Nets, the traffic is blocked by LeftSide_S2S policy, and the logs will show early drop for `blade:VPN dst:172.16.16.10` with no decrypt event
+4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
 ## Changing portals' URLs and renewing a gateway cluster certificate pp. 483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
