@@ -44,7 +44,7 @@
 4. Figure 11.7 has a minor typo nin the rule name of rule 12: "acccess"
 ## Configuring DMZ access rules p. 436
 1. User will need to power on DMZSRV for the first time. While the 1 vCPU maxxed out a lot, it is survivable.
-2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"
+2. Rule 17 has an incorrect rule name. It should be "Internal1 network to DMZ Accept"; same error on page 477 step 1
 ## Missing policy push and connectivity testing p.436
 1. Recommend after configuring DMZ access rules to:
     - create internet access rule under APCL & URL, Content Awareness Inline Layer
