@@ -70,6 +70,8 @@ save config
     - Since 172.16.16.0 is not part of Int_Nets, the traffic is blocked by LeftSide_S2S policy, and the logs will show early drop for `blade:VPN dst:172.16.16.10` with no decrypt event
 4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
     - In LeftSite_S2S policy rule one, add "CPGW" to the destination. Publish and install policy to allow SSH to CPGW
+5. The last paragraph in the section, on page 483, states "Note that we did not remove 200.200.0.1 from the encryption domain of CPGW but simply restricted traffic source from it from being encrypted."
+    - This is somewhat confusing. What is actually happening is that traffic sourced from 200.200.0.1 is excluded from the VPN and is not routed over the tunnel, using the Gaia routing instead.
 ## Changing portals' URLs and renewing a gateway cluster certificate pp. 483-486
 1. Page 485 step 3 will trigger an 'Are you sure?' warning
     - Click Yes to continue.
