@@ -124,5 +124,8 @@ save config
     - User name is `Ra_user1`
 6. Page 505 step 15 has you connect to the Remote Access VPN. If you have the error "Connection Failed", "You cannot receive an Office Mode IP address at this time. [...]" check the following:
     - Make sure ACDCDNS is up and running and check you followed the instructions on pages 499-500
-## Testing a remove acces VPN pp. 506-508
+## Testing a remote access VPN pp. 506-508
 1. If you have have problems with page 506 step 1, see page 495 step, number 2
+2. Step 3 intructs connecting via RDP from RightHost to LeftHost (lefthost.mycp.lab or 10.20.20.10); LeftHost needs RDP to be enabled first
+    - Enable RDP on LeftHost; start > Remote Desktop settings > Enable Remote Desktop, Confirm
+    - Username is Administrator and password is CPL@b8110
