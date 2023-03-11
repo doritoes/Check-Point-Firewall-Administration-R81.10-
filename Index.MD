@@ -46,3 +46,13 @@ ClusterXL in HA mode; recommend enabling "Use Virtual MAC" in most production en
     - When a failover occurs, the G-ARP packet is the only packet sourced from the VMAC Address. This alerts the connected switch about the (physical or virtual) port that the new active member is connectewd to via the MAC learning process, by updating the CAM tables
     - Faster and less prone to issues than some L3 swiches or routers might experience with traditional ARP Table updates, especially if you have a lot of statically NATed hosts
     - Cannot use this feature in the VirtualBox lab; majority of level 2 hypervisors do not have fully functioning virtual switches; Level 1 (bare metal) hypervisor like VMWare ESXi or Microsoft Hyper-V will work with VMAC
+
+Configuring cluster addresses on different subnets p. 543
+  - generally a virtual IP and the corresponding IPs of addresses assigned to the cluster member interface should belong to the same network
+  - there is a provision to use a virtual IP  address from a different network
+        - might have only a single public IP address but still want a cluster; see sk32073
+        - CAVEAT only applicable to either locally managed clusters or remote clusters that are not managed over the Internet (i.e., you have WAN connectivity)
+    - in most modern physical implementations, cluster interfaces are implemented as VLANs on bonded interfaces
+    - the parent interface (bond or standalone) containing VLAN sub-interfaces should NOT have an IP address assigned; VLAN ID 1 CANNOT be defined as a sub-interface
+    - the cluster interfaces configured on individual NIC ports are all monitored
+    - of the VLAN cluster interfaces residing on the same parent port or bond, only those with the lowest and highest VLAN IDs are monitored by default; you can change this configuraiton to monitor all the VLANs if necessary
