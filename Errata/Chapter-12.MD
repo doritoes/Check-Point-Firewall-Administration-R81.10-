@@ -116,9 +116,9 @@ save config
     - best option was re-clone the RightHost VM and start over
 3. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
     - re-installing the CPCXL VPN Certificate then un-installing/re-installing the endpoint did not clear the warning
-    - after viewing the details, select Trust and continue
+    - after viewing the details, retry, then select Trust and Continue
 4. On page 502 step 10 instructs choosing the login option Standard (Default), but this option does not appear. Figure 12.37 shows "Standard (Default)", which did appear.
-    - The only option available is vpn (Default); step 11 shows a display name of Standard, but the default is still vpn
+    - The only option available is `vpn (Default)`; step 11 shows a display name of Standard, but the default is still vpn
     - Click Next
 5. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
     - User name is `Ra_user1`
