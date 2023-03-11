@@ -32,5 +32,6 @@ The steps to build the lab are dispersed through the book. This page reference s
 | Configure CPGW for VPN                        |                    467-486 |
 | Remote Access VPN                             |                    487-508 |
 | Install Endpoint Security VPN                 |                    500-506 |
+| Configure SmartEvent                          |                    524-528 |
 
 more steps to add
