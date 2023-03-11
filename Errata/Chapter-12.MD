@@ -122,3 +122,5 @@ save config
     - Click Next
 5. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
     - User name is `Ra_user1`
+6. Page 505 step 15 has you connect to the Remote Access VPN. If you have the error "Connection Failed", "You cannot receive an Office Mode IP address at this time. [...]" check the following:
+    - Make sure ACDCDNS is up and running
