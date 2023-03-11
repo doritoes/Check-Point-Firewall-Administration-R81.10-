@@ -39,3 +39,10 @@ How to tell if the managment server is back up after a reboot, p. 235
 `$MDS_FWDIR/scripts/check_cpm_status.sh` works in both MDS/MDSM and SMS
 # CPUSE
 Offline CPUSE, pp. 236-238
+# ClusterXL
+ClusterXL in HA mode; recommend enabling "Use Virtual MAC" in most production environments pp. 540-542
+    - assigns identical MAC addresses to all cluster virtual interfaces
+    - "VMAC that is advertised by the cluster members (vira Gratuitous ARP Requests) keeps the real MAC Address of each member and adds another Virtual MAC address on top of it."
+    - When a failover occurs, the G-ARP packet is the only packet sourced from the VMAC Address. This alerts the connected switch about the (physical or virtual) port that the new active member is connectewd to via the MAC learning process, by updating the CAM tables
+    - Faster and less prone to issues than some L3 swiches or routers might experience with traditional ARP Table updates, especially if you have a lot of statically NATed hosts
+    - Cannot use this feature in the VirtualBox lab; majority of level 2 hypervisors do not have fully functioning virtual switches; Level 1 (bare metal) hypervisor like VMWare ESXi or Microsoft Hyper-V will work with VMAC
