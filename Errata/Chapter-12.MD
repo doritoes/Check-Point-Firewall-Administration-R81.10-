@@ -64,8 +64,8 @@ save config
 ## Star community - To center or through the center to other satellites, to Internet and other VPN targets pp. 479-483
 1. Page 480 step 4 states that Internet traffic from RightHost should be working; it does not work
     - Update the APCL_URLF_Parent rule by adding Net_172.16.16.0 to source column, and push LeftSide_S2S policy
-2. Step 6 is mising publishing and installing the LeftSide_S2S policy
-    - Publish all changes and intall LeftSide_S2S policy
+2. Step 6 is missing publishing and installing the LeftSide_S2S policy
+    - Publish all changes and install LeftSide_S2S policy
 3. Page 481 steps 7 and 8 state that sending traffic from any left side host, for example SmartConsole to any port just as port 80 on RightHost will be logged as encrypted and decrypted; this is not so
     - Since 172.16.16.0 is not part of Int_Nets, the traffic is blocked by LeftSide_S2S policy, and the logs will show early drop for `blade:VPN dst:172.16.16.10` with no decrypt event
 4. Page 481 last paragraph says to "SSH into CPGW". This is not possible from SmartConsole since page 469 step 1 removes CPGW_tmp and nowhere does it state with what to replace it
@@ -81,34 +81,35 @@ save config
         - check automatic address translation rules
         - Hide behind the gateway
         - Install on gateway: CPGW
-    - missing step to add this object 192.168.254.0/24 to group IntNets
+    - missing step to add this object 192.168.254.0/24 to group Int_Nets
 ## Configuring a gateway or cluster for remote access pp. 489-492
 1. Page 491 step 7 provides instructions that leave the setting "MAC address for DHCP allocation" at the default; Figure 12.24 has it set to "Calculated per user name"
     - Leave at the default value "MAC address for DHCP allocation" did not seem to break anything
 ## Configuring access control policy rules for remote access pp. 497-499
 1. Page 499 step 1 discusses replacing the "Int_Nets" object; this is actually the "Any" object since the parent rule already is limited to Int_Nets
-    - See above instructions for adding Net_192.168.254.0 to IntNets in order for this to work
+    - See above instructions for adding Net_192.168.254.0 to Int_Nets in order for this to work
     - Follow the book's instructions, understanding instead of "Int_Nets" you will see "Any"
 2. Step 4 says to install the policy; it does not warn the users of the warning message that is displayed
     - "You are about to override the current policy with "LeftSide_RA" for these gateways:" is expected
     - click Install
 3. If page 499 step 4 policy push fails with the message "Layer 'LeftSide_RA Network': Rule 15: Only Legacy Users Access is supported for Remote Access rules" and "Policy verification failed."
-    - Go back to page 498 fiugres 12.31 and 12.32 to confirm the VPN column is set to RemoteAccess
+    - Go back to page 498 figures 12.31 and 12.32 to confirm the VPN column is set to RemoteAccess
 ## Configuring a DHCP server for remote access Office Mode IP  range pp. 499-500
-1. See the files `remote-access-scope.bat` and `remote-access-scope.ps1` in this repo for electronic verions of these commands
+1. See the files `remote-access-scope.bat` and `remote-access-scope.ps1` in this repo for electronic versions of these commands
 ## Preparing remote client pp. 500-506
 1. On page 500, under Preparing Remote client, the second paragraph has the user change DNS to 9.9.9.9 and test accessing websites.
     - If you have trouble with Internet connectivity
-        - Be sure you followed instructions on page 487 under "Configuring a remote access IPSec VPN", where you remove both gatewas from the "Branches" community.  Both policies need to be installed.
-        - On the active CPCXL membere CPCM1 run `vpn tu` to see if the old site to site (S2S) tunnel are still up, and clear them if they are
+        - Be sure you followed instructions on page 487 under "Configuring a remote access IPSec VPN", where you remove both gateways from the "Branches" community.  Both policies need to be installed.
+        - On the active CPCXL member CPCM1 run `vpn tu` to see if the old site to site (S2S) tunnel are still up, and clear them if they are
     - Modify the "Branches" community, VPN Routing, set to "To center only"
     - Publish changes, and push both policies (LeftSide_RA and RightSide)
-
-2. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
+2. If you have trouble with page 501 steps 6 and 7 where you are not prompted to configure the VPN site, but only get connection failures
+    - 
+3. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
     - re-installing the CPCXL VPN Certificate then un-installing/re-installing the endpoint did not clear the warning
     - after viewing the details, select Trust and continue
-3. On page 502 step 10 instructs choosing the login option Standard (Default), but this option does not appear. Figure 12.37 shows "Standard (Default)", which did appear.
+4. On page 502 step 10 instructs choosing the login option Standard (Default), but this option does not appear. Figure 12.37 shows "Standard (Default)", which did appear.
     - The only option available is vpn (Default); step 11 shows a display name of Standard, but the default is still vpn
     - Click Next
-4. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
+5. Page 504 step 15 has the wrong username; the username is case sensitive and must be entered exactly as on page 488
     - User name is `Ra_user1`
