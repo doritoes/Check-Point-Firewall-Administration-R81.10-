@@ -110,6 +110,9 @@ save config
         - both Check Point servces are running, and restarting the services does not solve the problem
         - try install from a copy on the desktop, not from the F: drive; did not solve the problem
         - try reinstall and multiple reboots; did not solve the problem
+        - try uninstall, remove Check Point network device using device manager (under Network Devices), reboot, install
+        - changing to the Check Point Endpoint folder and turnning trace.exe commands didnt' help (`trac stop`, `trac start`, `trac list`, `trac log`
+        - uninstall then remove folder, `C:\Users\Administrator\AppData\Local\Temp\Check Point Endpoint Security`, re-install
         - last option, rebuild the VM and try again
 3. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
     - re-installing the CPCXL VPN Certificate then un-installing/re-installing the endpoint did not clear the warning
