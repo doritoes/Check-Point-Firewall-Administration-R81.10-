@@ -103,8 +103,14 @@ save config
         - On the active CPCXL member CPCM1 run `vpn tu` to see if the old site to site (S2S) tunnel are still up, and clear them if they are
     - Modify the "Branches" community, VPN Routing, set to "To center only"
     - Publish changes, and push both policies (LeftSide_RA and RightSide)
-2. If you have trouble with page 501 steps 6 and 7 where you are not prompted to configure the VPN site, but only get connection failures
-    - 
+2. If you have trouble with page 501 steps 6 and 7 where you are not prompted to configure the VPN site, but only get connection "Connectivity with the Check Point Endpoint Security service is lost"
+    - unable to configure, get Windows notifiations from the client
+        - reboot does not solve
+        - uninstall and reinstall does not help, "repair" does not help
+        - both Check Point servces are running, and restarting the services does not solve the problem
+        - try install from a copy on the desktop, not from the F: drive; did not solve the problem
+        - try reinstall and multiple reboots; did not solve the problem
+        - last option, rebuild the VM and try again
 3. On page 502, after step 9, the Endpoint Security Client interrupts configuration with the warning "The site's security certificate is not trusted!"
     - re-installing the CPCXL VPN Certificate then un-installing/re-installing the endpoint did not clear the warning
     - after viewing the details, select Trust and continue
