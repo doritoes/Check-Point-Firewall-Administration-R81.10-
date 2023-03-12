@@ -73,7 +73,7 @@ Leaves 4GB for the host and 4 threads short.
     - this does not modify previously saved sessions
 ## Tricks
 1. Set the time zone on WINBASE before you clone it
-2. Check if the management server is completely up (works for SMS and MDS)
+2. Check if the management server is completely up (works for SMS and MDS) (see page 562)
     - `$MDS_FWDIR/scripts/check_cpm_status.sh`
 3. You can try using `certutil` to install your custom root certificates (pp. 441-452) using the command line
     - `certutil -enterprise -f -v -AddStore "Root" <Cert File path>`
