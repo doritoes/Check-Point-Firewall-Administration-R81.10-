@@ -54,3 +54,4 @@ Surprise! (p. 316 for example)
     - `cphaprob routedifcs` - see whether a cluster member has dynamic routing confiugred and is associated with its interfaces
 - Sync interface p. 545-546, 548 (sync link usage)
 - Cluster edge cases p. 552-553
+- `fw hastat1 pp. 554-555
