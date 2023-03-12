@@ -56,3 +56,11 @@ Configuring cluster addresses on different subnets p. 543
     - the parent interface (bond or standalone) containing VLAN sub-interfaces should NOT have an IP address assigned; VLAN ID 1 CANNOT be defined as a sub-interface
     - the cluster interfaces configured on individual NIC ports are all monitored
     - of the VLAN cluster interfaces residing on the same parent port or bond, only those with the lowest and highest VLAN IDs are monitored by default; you can change this configuraiton to monitor all the VLANs if necessary
+
+Dynamic routing synchronization p. 547
+    - When a cluster member comes up, a Funn Sync takes place, and if dynamic routing is used Forwarding Information Base (FIB) manager ensures OSPF and BGP routes are propagated to the standby members
+        - `cphaprob routedifcs` - see whether a cluster member has dynamic routing confiugred and is associated with its interfaces
+
+Sync interface p. 545-546, 548 (sync link usage)
+
+Cluster edge cases p. 552-553
