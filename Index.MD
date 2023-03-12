@@ -13,7 +13,7 @@ NAT pools when you don't want to create a network object; see gateway Web GUI, p
 cpview and NAT pool utility, p. 407
 # Domain Objects
 Correct way, pp. 387-389
-    - tool on gateway
+    - tool on gateway to verify
     - No wildcard
     - without FQDN checked it will rely on reverse DNS lookups
 # Proxy ARP
