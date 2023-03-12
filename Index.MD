@@ -55,3 +55,13 @@ Surprise! (p. 316 for example)
 - Sync interface p. 545-546, 548 (sync link usage)
 - Cluster edge cases p. 552-553
 - `fw hastat1 pp. 554-555
+# Troubleshooting
+## Packet captures
+- https://community.checkpoint.com/fyrhh23835/attachments/fyhrhh23835/member-exclusives/484/2/CPX_Preso_TimHall_FINAL.pdf p582
+    - tcpdump, fwmonitor, cppcap comparisons and IMPORTANT recommendations
+- Pages 582-583 give the link to tcpdump101.com which can help you write your packet captures
+    - tcpdump101 can be downloaded and run in the browser of your choice
+## fw ctl zdebug drop and fw ctl zdebug + drop
+- Page 582 explains `fw ctl zdebug + drop` is "the extended version"
+- Pages 582-583 give the link to tcpdump101.com which can help you write your kernel debug
+    - tcpdump101 can be downloaded and run in the browser of your choice
