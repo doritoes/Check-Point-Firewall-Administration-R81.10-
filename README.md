@@ -7,3 +7,7 @@ The book is a great step-by-step hands-on learning tool for Check Point firewall
 However, there are a number of frustrating mistakes in the book that may cause some people who have purchased the book to simply give up.
 
 This repo provides some errata and solutions to problems encountered, many with assistance from the author. (thank you!)
+
+The author has added
+* Errata_and_Notes_v1.01-031923.pdf
+* Check Point Lab Rapid Deployment Guide.pdf (replacing Chapters 3 and 4)
